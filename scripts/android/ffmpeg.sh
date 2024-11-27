@@ -431,46 +431,22 @@ fi
   --strip="${STRIP}" \
   --nm="${NM}" \
   --extra-libs="$(pkg-config --libs --static cpu-features)" \
+  --disable-everything \
+  --disable-htmlpages \
   --disable-autodetect \
   --enable-cross-compile \
   --enable-pic \
   --enable-jni \
   --enable-optimizations \
-  --enable-swscale \
   ${BUILD_LIBRARY_OPTIONS} \
   --enable-pthreads \
-  --enable-v4l2-m2m \
-  --disable-outdev=fbdev \
-  --disable-indev=fbdev \
-  ${SIZE_OPTIONS} \
-  --disable-xmm-clobber-test \
-  ${DEBUG_OPTIONS} \
-  --disable-neon-clobber-test \
-  --disable-programs \
-  --disable-postproc \
-  --disable-doc \
-  --disable-htmlpages \
-  --disable-manpages \
-  --disable-podpages \
-  --disable-txtpages \
-  --disable-sndio \
-  --disable-schannel \
-  --disable-securetransport \
-  --disable-xlib \
-  --disable-cuda \
-  --disable-cuvid \
-  --disable-nvenc \
-  --disable-vaapi \
-  --disable-vdpau \
-  --disable-videotoolbox \
-  --disable-audiotoolbox \
-  --disable-appkit \
-  --disable-alsa \
-  --disable-cuda \
-  --disable-cuvid \
-  --disable-nvenc \
-  --disable-vaapi \
-  --disable-vdpau \
+  --enable-small \
+  --enable-decoder=flac \
+  --enable-encoder=flac \
+  --enable-demuxer=flac,mov,mpegts,mp4 \
+  --enable-parser=flac \
+  --enable-muxer=flac,mp4,mpegts \
+  --enable-protocol=file \
   ${CONFIGURE_POSTFIX} 1>>"${BASEDIR}"/build.log 2>&1
 
 if [[ $? -ne 0 ]]; then
