@@ -59,8 +59,8 @@ x86)
   ASM_OPTIONS=" --disable-neon --disable-asm --disable-inline-asm"
   ;;
 x86-64)
-  TARGET_CPU="x86_64"
-  TARGET_ARCH="x86_64"
+  TARGET_CPU="x86-64"
+  TARGET_ARCH="x86-64"
   ASM_OPTIONS=" --disable-neon --enable-asm --enable-inline-asm"
   ;;
 esac
@@ -509,7 +509,7 @@ overwrite_file "${BASEDIR}"/src/ffmpeg/libavutil/x86/asm.h "${FFMPEG_LIBRARY_PAT
 overwrite_file "${BASEDIR}"/src/ffmpeg/libavutil/x86/timer.h "${FFMPEG_LIBRARY_PATH}"/include/libavutil/x86/timer.h 1>>"${BASEDIR}"/build.log 2>&1
 overwrite_file "${BASEDIR}"/src/ffmpeg/libavutil/arm/timer.h "${FFMPEG_LIBRARY_PATH}"/include/libavutil/arm/timer.h 1>>"${BASEDIR}"/build.log 2>&1
 overwrite_file "${BASEDIR}"/src/ffmpeg/libavutil/aarch64/timer.h "${FFMPEG_LIBRARY_PATH}"/include/libavutil/aarch64/timer.h 1>>"${BASEDIR}"/build.log 2>&1
-overwrite_file "${BASEDIR}"/src/ffmpeg/libavutil/x86/emms.h "${FFMPEG_LIBRARY_PATH}"/include/libavutil/x86/emms.h 1>>"${BASEDIR}"/build.log 2>&1
+overwrite_file "${BASEDIR}"/src/ffmpeg/libavutil/emms.h "${FFMPEG_LIBRARY_PATH}"/include/libavutil/emms.h 1>>"${BASEDIR}"/build.log 2>&1
 
 if [ $? -eq 0 ]; then
   echo "ok"
