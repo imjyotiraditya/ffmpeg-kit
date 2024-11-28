@@ -40,8 +40,12 @@ jobs:
            --enable-android-zlib \
            --disable-arm-v7a
 
+     - name: Display Build Log
+       if: always()
+       run: cat build.log
+
      - name: Upload Build Logs
-       if: failure()
+       if: always()
        uses: actions/upload-artifact@v4
        with:
          name: build-logs
